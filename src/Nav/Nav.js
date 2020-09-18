@@ -86,7 +86,7 @@ const Nav = ({ setSearch, mutate, changeTemp, check }) => {
       <AppBar
         position="static"
         style={{
-          backgroundColor: "#4E0D3A",
+          backgroundColor: "#7d3f6d",
           borderRadius: "20px",
         }}
       >

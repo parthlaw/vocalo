@@ -27,10 +27,6 @@ function App() {
               <CardList search={search} setCheck={setCheck} />
             </div>
           </div>
-
-          <div className="footer">
-            <p>Data extracted from Oxford Dictonary API.</p>
-          </div>
         </Scroll>
       </div>
     </ApolloProvider>
