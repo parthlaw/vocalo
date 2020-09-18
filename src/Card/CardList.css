@@ -1,0 +1,10 @@
+/* For desktop: */
+.CardList {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}
+.Tilt {
+  margin: 1px;
+}
