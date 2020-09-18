@@ -1,7 +1,11 @@
 import React, { useState } from "react";
-import "./Nav.css";
+
+// graphql apollo imports
 import { graphql } from "react-apollo";
-import { addWordMutation, getWordsQuery } from "../queries/queries";
+import { addWordMutation, getWordsQuery } from "../../queries/queries";
+//.............
+
+// material ui imports
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
@@ -9,6 +13,9 @@ import Typography from "@material-ui/core/Typography";
 import InputBase from "@material-ui/core/InputBase";
 import { fade, makeStyles } from "@material-ui/core/styles";
 import SearchIcon from "@material-ui/icons/Search";
+//............................
+
+// styles ........................................
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -63,10 +70,15 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
+// .............................................
 
 const Nav = ({ setSearch, mutate, changeTemp, check }) => {
+  // state to store word in search field and send it to server
   const [addWord, setAddWord] = useState("");
+
   const classes = useStyles();
+
+  // function answers on pressing enter when entered a text in search field
   const handleSubmit = (e) => {
     console.log(check);
     if (check.length) {
@@ -81,6 +93,7 @@ const Nav = ({ setSearch, mutate, changeTemp, check }) => {
       changeTemp();
     }
   };
+
   return (
     <div className={classes.root}>
       <AppBar
