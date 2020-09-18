@@ -1,12 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300&display=swap");
 * {
   box-sizing: border-box;
+  font-family: "Kumbh Sans", sans-serif;
 }
 .row {
-  border: 1px solid white;
+  border: 1px solid transparent;
   margin-top: 2px;
   border-radius: 10px;
   z-index: +1;
-  background-color: #ffffff;
+  background-color: #eee3e3;
 }
 .row::after {
   content: "";
@@ -18,7 +20,6 @@
   padding: 15px;
 }
 html {
-  font-family: "Lucida Sans", sans-serif;
   margin: 12px;
   background-color: #5d1049;
   overflow-y: hidden;
@@ -26,6 +27,7 @@ html {
 
 .header {
   color: #ffffff;
+  padding-bottom: 17px;
 }
 
 .menu ul {

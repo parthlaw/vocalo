@@ -62,7 +62,9 @@ function RecipeReviewCard({
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography paragraph>{definition}</Typography>
+          <Typography paragraph style={{ fontFamily: "Kumbh Sans" }}>
+            {definition}
+          </Typography>
         </CardContent>
       </Collapse>
     </Card>

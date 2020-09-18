@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300&display=swap");
 * {
   box-sizing: border-box;
   padding: 0;
@@ -5,7 +6,7 @@
 }
 
 body {
-  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-family: "Kumbh Sans", sans-serif;
 }
 
 .navbar {
@@ -60,7 +61,13 @@ body {
 #chkToggle:checked + ul.main-nav {
   display: block;
 }
-
+ul {
+  list-style-type: none;
+}
+input {
+  border-radius: 5px;
+  border-color: #5d1049;
+}
 @media screen and (min-width: 768px) {
   .navbar {
     display: flex;
@@ -76,7 +83,6 @@ body {
 
   .main-nav {
     display: flex;
-    margin-right: 30px;
     flex-direction: row;
     justify-content: flex-end;
   }
@@ -86,7 +92,7 @@ body {
   }
 
   .nav-links {
-    margin-left: 40px;
+    margin: 40px;
     color: rgb(255, 255, 255);
   }
 
@@ -95,8 +101,9 @@ body {
   }
 
   .nav-links:hover {
-    border: 1px solid white;
-    padding: 10px;
-    border-radius: 25px;
+    cursor: pointer;
   }
+}
+.menu img {
+  width: 30px;
 }

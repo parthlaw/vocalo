@@ -1,25 +1,28 @@
 import React, { useEffect, useState } from "react";
 import Tilt from "react-tilt";
 import Card from "./Card";
+import CircularProgress from "@material-ui/core/CircularProgress";
 import "./CardList.css";
 import { graphql } from "react-apollo";
 import { getWordsQuery } from "../queries/queries";
 const CardList = (props) => {
-  const [temp, setTemp] = useState(false);
-  const changeTemp = () => {
-    setTemp(!temp);
-  };
+  const [list, setList] = useState([]);
   useEffect(() => {
-    console.log(props);
-  }, [props]);
+    if (list) {
+      props.setCheck(true);
+    } else {
+      props.setCheck(false);
+    }
+  }, [list, props]);
   const displayWords = () => {
     var data = props.data;
     if (data.loading) {
-      return <h1>Loading</h1>;
+      return <CircularProgress color="inherit" />;
     } else {
       const filteredWords = data.words.filter((data) => {
         return data.word_id.toLowerCase().includes(props.search.toLowerCase());
       });
+      setList(filteredWords);
       return filteredWords.map((word) => {
         return (
           <Card

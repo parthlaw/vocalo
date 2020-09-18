@@ -11,6 +11,7 @@ const client = new ApolloClient({
 function App() {
   const [search, setSearch] = useState("");
   const [temp, setTemp] = useState(false);
+  const [check, setCheck] = useState(false);
   const changeTemp = () => {
     setTemp(!temp);
   };
@@ -18,20 +19,17 @@ function App() {
     <ApolloProvider client={client}>
       <div className="App">
         <div className="header">
-          <Nav setSearch={setSearch} changeTemp={changeTemp} />
+          <Nav setSearch={setSearch} changeTemp={changeTemp} check={check} />
         </div>
         <Scroll>
           <div className="row">
             <div className="col-12">
-              <CardList search={search} />
+              <CardList search={search} setCheck={setCheck} />
             </div>
           </div>
 
           <div className="footer">
-            <p>
-              Resize the browser window to see how the content respond to the
-              resizing.
-            </p>
+            <p>Data extracted from Oxford Dictonary API.</p>
           </div>
         </Scroll>
       </div>
