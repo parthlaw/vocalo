@@ -67,14 +67,19 @@ const useStyles = makeStyles((theme) => ({
 const Nav = ({ setSearch, mutate, changeTemp, check }) => {
   const [addWord, setAddWord] = useState("");
   const classes = useStyles();
-  const handleSubmit = () => {
-    mutate({
-      variables: {
-        word_id: addWord,
-      },
-      refetchQueries: [{ query: getWordsQuery }],
-    });
-    changeTemp();
+  const handleSubmit = (e) => {
+    console.log(check);
+    if (check.length) {
+      e.preventDefault();
+    } else {
+      mutate({
+        variables: {
+          word_id: addWord,
+        },
+        refetchQueries: [{ query: getWordsQuery }],
+      });
+      changeTemp();
+    }
   };
   return (
     <div className={classes.root}>
@@ -111,13 +116,7 @@ const Nav = ({ setSearch, mutate, changeTemp, check }) => {
                 setSearch(e.target.value);
                 setAddWord(e.target.value);
               }}
-              onKeyPress={(e) =>
-                check
-                  ? e.preventDefault()
-                  : e.charCode === 13
-                  ? handleSubmit()
-                  : null
-              }
+              onKeyPress={(e) => (e.charCode === 13 ? handleSubmit(e) : null)}
               classes={{
                 root: classes.inputRoot,
                 input: classes.inputInput,

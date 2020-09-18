@@ -8,11 +8,7 @@ import { getWordsQuery } from "../queries/queries";
 const CardList = (props) => {
   const [list, setList] = useState([]);
   useEffect(() => {
-    if (list) {
-      props.setCheck(true);
-    } else {
-      props.setCheck(false);
-    }
+    props.setCheck(list);
   }, [list, props]);
   const displayWords = () => {
     var data = props.data;
@@ -22,7 +18,7 @@ const CardList = (props) => {
       const filteredWords = data.words.filter((data) => {
         return data.word_id.toLowerCase().includes(props.search.toLowerCase());
       });
-      setList(filteredWords);
+      console.log(filteredWords);
       return filteredWords.map((word) => {
         return (
           <Card

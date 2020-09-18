@@ -11,7 +11,7 @@ const client = new ApolloClient({
 function App() {
   const [search, setSearch] = useState("");
   const [temp, setTemp] = useState(false);
-  const [check, setCheck] = useState(false);
+  const [check, setCheck] = useState([]);
   const changeTemp = () => {
     setTemp(!temp);
   };
